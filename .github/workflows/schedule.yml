@@ -2,8 +2,8 @@ name: Run Batch Prediction
 
 on:
   schedule:
-    # Runs at 09:30 pm every day (cron syntax)
-    - cron: '0 2 * * *'
+    # Runs at 09:45 PM Pakistan Time (PST), which is 4:45 PM UTC
+    - cron: '45 16 * * *'
 
 jobs:
   batch-prediction:
@@ -28,4 +28,4 @@ jobs:
       # Run the batch prediction script
       - name: Run batch predictions
         run: |
-          python app.py.py
+          python app.py
