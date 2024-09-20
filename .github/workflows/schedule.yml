@@ -3,7 +3,7 @@ name: Run Batch Prediction
 on:
   schedule:
     # Runs at 09:45 PM Pakistan Time (PST), which is 4:45 PM UTC
-    - cron: '55 17 * * *'
+    - cron: '30 18 * * *'
 
 jobs:
   batch-prediction:
