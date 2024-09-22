@@ -2,7 +2,7 @@ name: Run Batch Prediction
 
 on:
   schedule:
-    - cron: '55 11 * * *'
+    - cron: '40 13 * * *'
 
 jobs:
   batch-prediction:
