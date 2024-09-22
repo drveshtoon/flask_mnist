@@ -7,7 +7,6 @@ import tensorflow as tf
 from tensorflow.keras import models, layers
 from tensorflow.keras.datasets import fashion_mnist
 import numpy as np
-import matplotlib.pyplot as plt
 from flask import Flask, jsonify
 from PIL import Image
 
