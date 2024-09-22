@@ -7,7 +7,7 @@ from PIL import Image
 app = Flask(__name__)
 
 # Load the trained Fashion MNIST model (pre-uploaded .keras file)
-model_path = 'fashion_mnist_model.keras'  # Assuming it's in the same directory
+model_path = 'fashion_mnist_model.h5'  
 if not os.path.isfile(model_path):
     raise FileNotFoundError(f"Model file '{model_path}' not found.")
 model = tf.keras.models.load_model(model_path)
