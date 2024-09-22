@@ -156,7 +156,7 @@ def predict():
         predictions = []
 
         # Directory path containing multiple images
-        image_dir = '/content/new_data/test'
+        image_dir = 'test.zip'
         image_paths = [os.path.join(image_dir, filename) for filename in os.listdir(image_dir) if
                        filename.endswith('.jpg')]
 
