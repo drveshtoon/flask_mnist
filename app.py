@@ -6,7 +6,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
-# Load the trained Fashion MNIST model (pre-uploaded .keras file)
+
 model_path = 'fashion_mnist_model.h5'  
 if not os.path.isfile(model_path):
     raise FileNotFoundError(f"Model file '{model_path}' not found.")
@@ -43,7 +43,7 @@ def predict():
 
         # Directory path containing multiple images
         image_dir = 'new_data'  # Path to your image folder
-        image_paths = [os.path.join(image_dir, filename) for filename in os.listdir(image_dir) if filename.endswith('.jpg')]
+        image_paths = [os.path.join(image_dir, filename) for filename in os.listdir(image_dir) if filename.endswith(('.jpg', '.png'))]  # Include multiple image types
 
         # Check if there are no images to process
         if not image_paths:
@@ -71,4 +71,5 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Run the Flask app in production mode (no debug)
+    app.run(host='0.0.0.0', port=5000, debug=False)
