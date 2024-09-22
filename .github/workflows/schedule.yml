@@ -2,7 +2,7 @@ name: Run Batch Prediction
 
 on:
   schedule:
-    - cron: '55 14 * * *'
+    - cron: '43 15 * * *'  
 
 jobs:
   batch-prediction:
@@ -19,12 +19,17 @@ jobs:
         with:
           python-version: '3.8'
 
-      # Install dependencies (if any)
+      # Install dependencies
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
-      # Run the batch prediction script
+      # Run the Flask API in the background
+      - name: Start Flask API
+        run: |
+          nohup python app.py &
+
+      # Run the batch prediction script to call the API
       - name: Run batch predictions
         run: |
-          python app.py
+          python batch_predict.py
