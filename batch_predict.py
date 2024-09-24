@@ -23,12 +23,6 @@ if image_paths:
             predictions = response.json().get('predictions', [])
             for prediction in predictions:
                 print(prediction)  # This will output the prediction to the console
-else:
-    print(f"Error: Received status code {response.status_code}")
-
-            # Save or print batch results
-            for prediction in predictions:
-                print(prediction)
         else:
             print(f"Error: Received status code {response.status_code}")
     finally:
