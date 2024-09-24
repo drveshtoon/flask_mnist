@@ -21,6 +21,10 @@ if image_paths:
         # Parse the response from the API
         if response.status_code == 200:
             predictions = response.json().get('predictions', [])
+            for prediction in predictions:
+                print(prediction)  # This will output the prediction to the console
+else:
+    print(f"Error: Received status code {response.status_code}")
 
             # Save or print batch results
             for prediction in predictions:
